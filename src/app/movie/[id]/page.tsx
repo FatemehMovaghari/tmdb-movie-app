@@ -1,12 +1,13 @@
 import { fetchMovieDetails } from "@/lib/api";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { type Metadata } from "next";
 
-export default async function MovieDetailPage({
-  params,
-}: {
+interface Props {
   params: { id: string };
-}) {
+}
+
+export default async function MovieDetailPage({ params }: Props) {
   const movieId = parseInt(params.id);
 
   try {
@@ -33,7 +34,7 @@ export default async function MovieDetailPage({
         </div>
       </main>
     );
-  } catch (error) {
+  } catch {
     notFound();
   }
 }

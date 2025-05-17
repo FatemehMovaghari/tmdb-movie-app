@@ -9,6 +9,13 @@ import {
 } from "@/lib/api";
 import { Movie } from "@/types/movie";
 
+type PageProps = {
+  searchParams?: {
+    query?: string;
+    genre?: string;
+  };
+};
+
 type Props = {
   searchParams: { query?: string; genre?: string };
 };
