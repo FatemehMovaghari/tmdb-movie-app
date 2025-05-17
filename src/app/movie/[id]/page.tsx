@@ -2,13 +2,13 @@ import { fetchMovieDetails } from "@/lib/api";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-type Props = {
+interface MovieDetailPageProps {
   params: {
     id: string;
   };
-};
+}
 
-export default async function MovieDetailPage({ params }: Props) {
+export default async function MovieDetailPage({ params }: MovieDetailPageProps) {
   const movieId = parseInt(params.id);
 
   try {
